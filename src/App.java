@@ -18,12 +18,12 @@ public class App {
         String body = response.body();
 
         var parser = new JsonParser();
-        List<Map<String, String>> listaDeFilmes = parser.parse(body);
+        List<Map<String, String>> filmsList = parser.parse(body);
 
-        for (Map<String,String> filme : listaDeFilmes) {
-            System.out.println(filme.get("title"));
-            System.out.println(filme.get("image"));
-            System.out.println(filme.get("imDbRating"));
+        for (Map<String,String> film : filmsList) {
+            System.out.println(film.get("title"));
+            System.out.println(film.get("image"));
+            System.out.println(film.get("imDbRating"));
             System.out.println();
         }
     }
