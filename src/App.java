@@ -29,8 +29,19 @@ public class App {
         for (Map<String,String> film : filmsList) {
             System.out.format("\u001b[1m\u001b[92m\u001b[103m%s \u001b[m \n", film.get("title"));
             System.out.println(film.get("image"));
+            System.out.println(star(film.get("imDbRating")));
             System.out.println(film.get("imDbRating"));
             System.out.println();
         }
+    }
+
+    static String star(String rating) {
+        var star = "";
+        var ratingString = Double.parseDouble(rating);
+        var ratingInt = (int) ratingString;
+        for (int i = 0; i < ratingInt; i++) {
+            star += "\u2B50";
+        }
+        return star;
     }
 }
